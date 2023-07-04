@@ -1,0 +1,68 @@
+.formContainer{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.formImg{
+    width: 200px;
+}
+
+.formInputText{
+    display: flex;
+    align-items: center;  
+}
+
+.inputText{
+    margin: 0 5px 0 5px;
+    width: 250px;
+    height: 20px;
+}
+
+.formInputNumber{
+    display: flex;
+    align-items: center;
+}
+.inputNumber{
+    margin: 0 5px 0 5px;
+    width: 25px;
+    height: 20px;
+}
+.inputNumber::-webkit-inner-spin-button,
+.inputNumber::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.temperamentsContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.listTemperaments{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.listTemperaments p {
+    margin: 10px;
+}
+
+.listTemperaments :hover{
+    color: red;
+    cursor: pointer;
+}
+
+.red {
+    color: red;
+}
+
+.buttonSubmit{
+    background-color: yellow;
+    color: black;
+    width: 100px;
+    margin: 20px;
+    cursor: pointer;
+}
+
