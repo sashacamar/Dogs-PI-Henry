@@ -1,0 +1,16 @@
+.input{
+    height: 25px;
+    width: 250px;
+    padding-left: 10px;
+
+    border: 2px solid #22CCD6;
+    border-radius: 20px;
+    color: #020505;
+
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.input:focus {
+    outline: none;
+}

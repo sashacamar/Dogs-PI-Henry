@@ -1,0 +1,69 @@
+.homeContainer{
+    width: 100vw;
+    min-height: 100vh;
+    margin-top: 100px;
+}
+
+.pagesContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagesContainer button{
+    border: none;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    color: #22CCD6;
+    font-weight: 700;
+    padding: 0 15px;
+
+}
+.numberPage{
+    font-weight: 700;
+}
+.pagesContainer p {
+    padding: 0 10px;
+}
+
+.totalDogs{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    color: rgb(182, 182, 182);
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.loading{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.noFound{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.errorText{
+    margin-top: -60px;   
+    width: 300px; 
+}
+.errorText h1{
+    color: #8C3700;
+    font-size: 40px;
+}
+.errorText p{
+    color:  #747474;
+}
+
+.noFound img{
+    width: 200px;
+    margin-right: 50px;
+}

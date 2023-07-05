@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { getDogsByName } from "../../redux/actions";
 import { useState } from "react";
+import style from './SearchBar.module.css'
 
 const SearchBar = ()=>{
     const [searchByName, setSearchByName] = useState({
@@ -16,9 +17,8 @@ const SearchBar = ()=>{
     };
 
     return(
-        <div>
-            <label>Buscar</label>
-            <input type="text" name="name" value={searchByName.name} onChange={changeHandler}/>
+        <div className={style.searchBarContainer}>
+            <input className={style.input} placeholder="SEARCH BY RACE" type="text" name="name" value={searchByName.name} onChange={changeHandler}/>
         </div>
     )
 }

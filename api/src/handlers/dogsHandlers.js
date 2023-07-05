@@ -10,6 +10,7 @@ const getDogsHandler = async(req,res)=>{
     try {
         if (name){
             const allDogs = await getDogsByName(name);
+            if(!allDogs.length) throw new Error('dogs not found')
             res.status(200).json(allDogs);
         }
         else {

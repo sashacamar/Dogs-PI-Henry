@@ -143,6 +143,7 @@ const getDogById = async(dogID)=>{
 
 //--------Agregar una nueva raza a la DDBB
 const createDog = async(name, heightMin, heightMax, weightMin, weightMax, life_spanMin, life_spanMax, temperaments)=>{
+    if(!temperaments.length) throw new Error('No temperaments to relate')
     const newDog = await Dog.create({name, heightMin, heightMax, weightMin, weightMax, life_spanMin, life_spanMax});
     await associateTemperament(newDog, temperaments);
     return newDog;

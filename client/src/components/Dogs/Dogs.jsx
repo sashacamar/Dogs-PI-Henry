@@ -17,6 +17,7 @@ const Dogs = ({dogs, currentPage, itemsPerPage})=>{
                 name = {dog.name}
                 weightMin = {dog.weightMin}
                 weightMax = {dog.weightMax}
+                temperaments = {dog.temperaments}
                 />
             )}
         </div>

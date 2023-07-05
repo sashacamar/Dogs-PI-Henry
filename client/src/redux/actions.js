@@ -31,7 +31,7 @@ export const getDogsByName = (name)=>{
         } catch (error) {
             return dispatch({
                 type: ERROR,
-                payload: error.message
+                payload: error.response.data.error
             })
         }
     }
@@ -67,7 +67,7 @@ export const postDog = (dogData)=>{
         } catch (error) {
             return dispatch({
                 type: ERROR,
-                payload: error.message
+                payload: error.response.data.error
             })
         }
     }

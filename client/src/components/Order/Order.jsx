@@ -1,18 +1,24 @@
-const Order = ({sortHandler})=>{
+import style from './Order.module.css'
+
+const Order = ({sortHandler, state})=>{
     return(
-        <div>
-            <h3>Ordernar por:</h3>
-            <label>Nombre</label>
-            <button onClick={()=>{sortHandler('byName', 'asc')}}>↓</button>
-            <button onClick={()=>{sortHandler('byName', 'desc')}}>↑</button>
-
-            <label>Peso min</label>
-            <button onClick={()=>{sortHandler('byWeightMin', 'asc')}}>↓</button>
-            <button onClick={()=>{sortHandler('byWeightMin', 'desc')}}>↑</button>
-
-            <label>Peso max</label>
-            <button onClick={()=>{sortHandler('byWeightMax', 'asc')}}>↓</button>
-            <button onClick={()=>{sortHandler('byWeightMax', 'desc')}}>↑</button>
+        <div className={style.orderContainer}>
+            <h3 className={style.title}>Sort by</h3>
+            <div className={style.handler}>
+                <button className={state.key==="byName"&&state.order==="desc"?style.changeColor:""} onClick={()=>{sortHandler('byName', 'desc')}}>↓</button>
+                <label className={state.key==="byName"?style.changeColor:""}>Name</label>
+                <button className={state.key==="byName"&&state.order==="asc"?style.changeColor:""} onClick={()=>{sortHandler('byName', 'asc')}}>↑</button>
+            </div>
+            <div className={style.handler}>
+                <button className={state.key==="byWeightMin"&&state.order==="desc"?style.changeColor:""} onClick={()=>{sortHandler('byWeightMin', 'desc')}}>↓</button>
+                <label className={state.key==="byWeightMin"?style.changeColor:""}>Weight Min</label>
+                <button className={state.key==="byWeightMin"&&state.order==="asc"?style.changeColor:""} onClick={()=>{sortHandler('byWeightMin', 'asc')}}>↑</button>
+            </div>
+            <div className={style.handler}>
+                <button className={state.key==="byWeightMax"&&state.order==="desc"?style.changeColor:""} onClick={()=>{sortHandler('byWeightMax', 'desc')}}>↓</button>
+                <label className={state.key==="byWeightMax"?style.changeColor:""}>Weight Max</label>
+                <button className={state.key==="byWeightMax"&&state.order==="asc"?style.changeColor:""} onClick={()=>{sortHandler('byWeightMax', 'asc')}}>↑</button>
+            </div>
         </div>
     )
 }

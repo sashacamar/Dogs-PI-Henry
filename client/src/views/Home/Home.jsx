@@ -2,9 +2,19 @@ import Dogs from "../../components/Dogs/Dogs";
 import Filters from "../../components/Filters/Filters";
 import Order from "../../components/Order/Order";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import style from './Home.module.css'
+
+import { getDogs } from '../../redux/actions'
+
+
+import loading_gif from '../../utils/assets/loading.gif'
+import error_img from '../../utils/assets/error.png'
 
 const Home = () => {
+    //Estado de errores por buscar por nombre
+    const error = useSelector(state=>state.errors)
+    
     //---Armado de Paginado
     const dogsState = useSelector(state=>state.dogs)
     const [currentPage, setCurrentPage] = useState(1);
@@ -79,40 +89,72 @@ const Home = () => {
         if(currentPage>totalPages) handleFirstPage()
     },[totalPages])
 
+    //Cargar el array de perros cuando se monte la view de home
+    const dispatch = useDispatch()
+    useEffect(()=>{
+        dispatch(getDogs());
+    },[])
+
     return (
-        <div>
-            <h1>Hola</h1>
+        <div className={style.homeContainer}>
             <Order
+            state={sort}
             sortHandler={sortHandler}
             />
 
             <Filters
+            originState={origin}
             originHandler={originHandler}
             temperamentsHandler={temperamentsHandler}
             handleFirstPage={handleFirstPage}
             currentTemperaments={temp}
             />
 
-            <p>Total perros: {totalItems}</p>
-            <button onClick={handleFirstPage}>Pincipio</button>
-            <button onClick={handlePreviousPage}>Atras</button>
-            <p>{currentPage} de {totalPages} paginas</p>
-            <button onClick={handleNextPage}>Siguiente</button>
-            <button onClick={handleLastPage}>Final</button>
+            <div className={style.pagesContainer}>
+                <button onClick={handleFirstPage}>START</button>
+                <p>{"<"}</p>
+                <button onClick={handlePreviousPage}>PREVIOUS</button>
+                <p className={style.numberPage}>{currentPage}</p>
+                <p>of</p>
+                <p className={style.numberPage}>{totalPages}</p>
+                <p>pages</p>
+                <button onClick={handleNextPage}>NEXT</button>
+                <p>{">"}</p>
+                <button onClick={handleLastPage}>END</button>
+            </div>
             {!dogsState.length 
-            ?(<p>cargando...</p>)
+            ?(<div className={style.loading}>
+                <img src={loading_gif} alt="loading..." />
+            </div>)
             :(<>{
-                dogsState.length && !dogs.length
-                ?(<p>no se encontraron perros con esas caracteristicas</p>)
+                (dogsState.length && !dogs.length) || (error === "dogs not found")
+                ?(<div className={style.noFound}>
+                    <img src={error_img} alt="ERROR-404" />
+                    <div className={style.errorText}>
+                        <h1>UPS!</h1>
+                        <p>No dog with these characteristics was found.</p>
+                    </div>
+                </div>
+                )
                 :(<Dogs
                 dogs = {dogs}
                 currentPage = {currentPage}
                 itemsPerPage = {itemsPerPage}
                 />)
             }</>)}
-            <button onClick={handlePreviousPage}>Atras</button>
-            <p>{currentPage} de {totalPages} paginas</p>
-            <button onClick={handleNextPage}>Siguiente</button>
+            <div className={style.pagesContainer}>
+                <button onClick={handleFirstPage}>START</button>
+                <p>{"<"}</p>
+                <button onClick={handlePreviousPage}>PREVIOUS</button>
+                <p className={style.numberPage}>{currentPage}</p>
+                <p>of</p>
+                <p className={style.numberPage}>{totalPages}</p>
+                <p>pages</p>
+                <button onClick={handleNextPage}>NEXT</button>
+                <p>{">"}</p>
+                <button onClick={handleLastPage}>END</button>
+            </div>
+            <div className={style.totalDogs}>Total dogs: {totalItems}</div>
         </div>
     )
 }

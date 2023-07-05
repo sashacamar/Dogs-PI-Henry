@@ -1,68 +1,200 @@
 .formContainer{
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-top: 150px;
+    /* background-color: #020505; */
 
+}
+
+.window{
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    padding: 60px;
+    background-color:  #020505;
+    color: white;
+    z-index: 2;
+}
+
+.window p:hover{
+    cursor: pointer;
 }
 
 .formImg{
-    width: 200px;
+    /* display: none; */
+    width: 300px;
+    border-radius: 100%;
+    position: absolute;
+    top: 80px;
+    left: 950px;
+    border: 25px solid #020505;
+    z-index: 3;
 }
 
+.inputsContainer{
+    border-radius: 50px 0 0 0;
+    width: 500px;
+    padding: 100px;
+    background-color:  #020505;
+    color: #f7f7f7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 15px;
+}
+.error{
+    color: red;
+    font-size: 11px;
+}
 .formInputText{
     display: flex;
-    align-items: center;  
+    flex-direction: column;
+    justify-content: center;
 }
-
 .inputText{
-    margin: 0 5px 0 5px;
+    padding-left: 10px;
+    margin: 5px 0;
     width: 250px;
-    height: 20px;
+    height: 35px;
+    border: 0.5px solid #f7f7f73c;
+    background-color: #020505;
+    color: #22CCD6;
+    text-transform: uppercase;
+}
+.inputTextError{
+    padding-left: 10px;
+    margin: 5px 0;
+    width: 250px;
+    height: 35px;
+    border: 0.5px solid rgba(255, 0, 0, 0.523);
+    background-color: #020505;
+    color: red;
+    text-transform: uppercase;
 }
 
 .formInputNumber{
+    margin-top: 20px;
     display: flex;
     align-items: center;
 }
 .inputNumber{
-    margin: 0 5px 0 5px;
-    width: 25px;
-    height: 20px;
+    border: 0.5px solid #f7f7f73c;
+    background-color: #020505;
+    color: #22CCD6;
+    padding-left: 10px;
+    margin: 0 15px;
+    width: 35px;
+    height: 25px;
+}
+.inputNumberError{
+    border: 0.5px solid rgba(255, 0, 0, 0.523);
+    background-color: #020505;
+    color: red;
+    padding-left: 10px;
+    margin: 0 15px;
+    width: 35px;
+    height: 25px;
 }
 .inputNumber::-webkit-inner-spin-button,
 .inputNumber::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-
-.temperamentsContainer{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.listTemperaments{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.listTemperaments p {
-    margin: 10px;
-}
-
-.listTemperaments :hover{
-    color: red;
-    cursor: pointer;
-}
-
-.red {
-    color: red;
+.inputNumberError::-webkit-inner-spin-button,
+.inputNumberError::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .buttonSubmit{
-    background-color: yellow;
-    color: black;
-    width: 100px;
-    margin: 20px;
+    border: none;
+    background-image: linear-gradient( to left,#0b6aa1, #0ec8d2);
+    color: #020505;
     cursor: pointer;
+    width: 700px;
+
+    font-size: 16px;
+    padding: 15px 35px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    border-radius: 0 0 50px 50px;
+
+}
+.buttonSubmit:hover{
+    color: #f7f7f7;
 }
 
+/* ESTILO A LA LISTA DE TEMPERAMENTOS */
+.temperamentsContainer{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.titleContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-weight: 300;
+    font-size: 15px;
+
+}
+.title{
+    font-weight: 300;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+.titleError{
+    font-weight: 300;
+    font-size: 15px;
+    color: red;
+
+    cursor: pointer; 
+}
+.titleContainer p{
+    margin: 0 10px;
+    color:  #f7f7f7;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+.titleContainer p:hover{
+    color: #22CCD6 !important;
+}
+.buttonShow{
+    font-size: 16px !important;
+}
+.temperaments{
+    width: 100%;
+}
+.temperaments p{
+    margin: 10px;
+    color:  #f7f7f7;
+    font-size: 13px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+.temperaments p:hover{
+    color: #22CCD6 !important;
+}
+.show{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.noShow{
+    display: none;
+}
+.changeColor{
+    color: #22CCD6 !important;
+}

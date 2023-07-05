@@ -31,7 +31,7 @@ const rootReducer = (state = inicialState, action)=>{
         case POST_DOG:
             return{
                 ...state,
-                dogs: [action.payload, ...state.dogs],
+                dog: action.payload,
                 errors: null
             }
         case GET_TEMPERAMENTS:

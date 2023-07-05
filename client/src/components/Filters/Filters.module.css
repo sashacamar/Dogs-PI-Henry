@@ -1,3 +1,107 @@
-.red {
-    color: red;
+.filtersContainer{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-left: 18%;
+
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 0.5px solid rgba(126, 126, 126, 0.2);
+}
+.searchContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchContainer button{
+    border: none;
+    background-color: #f7f7f7;
+    color:  #020505;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 6px 20px 0 20px;
+
+    cursor: pointer;
+}
+.searchContainer button:hover{
+    color: #22CCD6 !important;
+}
+
+.title{
+    text-transform: uppercase;
+    font-weight: 300;
+
+    margin-right: 50px;    
+}
+
+.searchContainer p{
+    color:  #020505;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+.temperamentsContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.titleContainer{
+    display: flex;
+    margin-left: -20px;
+}
+.titleContainer button{
+    margin-top: 4px;
+    border: none;
+    background-color: #f7f7f7;
+    color:  #020505;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+.titleContainer button:hover{
+    color: #22CCD6 !important;
+}
+.buttonShow{
+    font-size: 16px !important;
+}
+
+.temperaments{
+    width: 95%;
+    margin-left: -15px;
+}
+.temperaments button{
+    margin: 10px;
+    border: none;
+    background-color: #f7f7f7;
+    color:  #020505;
+    font-size: 13px;
+    font-weight: 100;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+.temperaments button:hover{
+    color: #22CCD6 !important;
+}
+.title{
+    cursor: pointer;
+}
+.show{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.noShow{
+    display: none;
+}
+.changeColor{
+    color: #22CCD6 !important;
 }

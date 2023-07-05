@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
 import style from './Dog.module.css'
 
-const Dog = ({id, name, image, weightMin, weightMax})=>{
+const Dog = ({id, name, image, weightMin, weightMax, temperaments})=>{
     return(
         <div className={style.dogContainer}>
             <Link to={`/dog/${id}`}>
-                <img src={image} alt="perro" />
+                <div className={style.dogImgContainer}>
+                    <img src={image} alt="perro" />
+                </div>
             </Link>
-            <p>name: {name}</p> 
-            <p>peso: {weightMin} kg - {weightMax} kg</p>
+            <div className={style.infoContainer}>
+                <p className={style.title}>{name}</p> 
+                <p className={style.text}>{weightMin?weightMin:'--'} kg - {weightMax?weightMax:'--'} kg</p>
+                <p className={style.text}>{temperaments[0]}{temperaments[1]&&`, ${temperaments[1]}`}{temperaments[2]&&'...'}</p>
+            </div>
         </div>
     )
 }
