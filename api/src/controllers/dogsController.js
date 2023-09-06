@@ -53,7 +53,6 @@ const searchImage = async(dog)=>
 
 //Funcion para asociar los temperamentos recogidos por body al crear un nuevo perro
 const associateTemperament = async(dog, temperaments)=>{
-    console.log(temperaments);
     for (const temperament of temperaments) {
         const temp = await Temperament.findOne({where:{name: temperament}});
         temp && dog.addTemperament(temp.get('id'))
