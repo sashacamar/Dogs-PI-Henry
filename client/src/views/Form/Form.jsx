@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { postDog } from '../../redux/actions';
 
 //const default_image = 'http://localhost:3001/dogs/default-image'
-const default_image = 'henry-pi-back-production.up.railway.app/dogs/default-image'
+const default_image = 'http://henry-pi-back-production.up.railway.app/dogs/default-image'
 
 const Form = () => {
     const [windowSuccess, setWindowSuccess] = useState("")
