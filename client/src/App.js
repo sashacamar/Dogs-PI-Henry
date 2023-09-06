@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { getTemperaments, getDogs } from './redux/actions'
 import axios from 'axios';
 //axios.defaults.baseURL = "http://localhost:3001";
-axios.defaults.baseURL = "http://henry-pi-back-production.up.railway.app";
+axios.defaults.baseURL = "https://henry-pi-back-production.up.railway.app";
 
 
 function App() {
