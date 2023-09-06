@@ -67,7 +67,7 @@ export const postDog = (dogData)=>{
         } catch (error) {
             return dispatch({
                 type: ERROR,
-                payload: error.response.data.error
+                payload: error.response? error.response.data.error:error.message
             })
         }
     }
